@@ -1,0 +1,113 @@
+:root{
+    --font-color: #96CEB4;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background: url(/image/6701118.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.title{
+    position: relative;
+    svg{
+        .first{
+            fill: transparent;
+            stroke: var(--font-color);
+            stroke-width: 0.1rem;
+            stroke-dasharray: 60vw;
+            stroke-dashoffset: 60vw;
+            animation: appear 6s ease-out 1 forwards;
+            @keyframes appear {
+                0%{
+                    stroke-dashoffset: 60vw;
+                }
+                10%{
+                    fill: transparent;
+                }
+                50%{
+                    stroke-dashoffset: 0;
+                    fill: var(--font-color);
+                }
+                70%{
+                    fill:var(--font-color);
+                }
+                100%{
+                    stroke-dashoffset: 60vW;
+                    fill: transparent;
+                }
+            };
+        }
+        .second{
+            fill: transparent;
+            stroke: var(--font-color);
+            stroke-width: 0.1rem;
+            stroke-dasharray: 60vw;
+            stroke-dashoffset: 60vw;
+            animation: appear 9s ease-out 1 forwards;
+            animation-delay: 7s;
+        }
+        .third{
+            fill: transparent;
+            stroke: var(--font-color);
+            stroke-width: 0.1rem;
+            stroke-dasharray: 90vw;
+            stroke-dashoffset: 90vw;
+            animation: third_appear 6s ease-out 1 forwards;
+            animation-delay: 17s;
+            @keyframes third_appear {
+                0%{
+                    stroke-dashoffset: 90vw;
+                    fill: transparent;
+                }
+                100%{
+                    fill: var(--font-color);
+                    stroke-dashoffset: 0vw;
+                }
+            }
+        }
+    }
+    #start-btn{
+        opacity: 0;
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 16px;
+        background-color: var(--font-color);
+        border: 0.2vw solid var(--font-color);
+        padding: 2vw 2.2vw;
+        border-radius: 2vw;
+        cursor: pointer;
+        animation: button-appear 1s linear 1 forwards;
+        animation-delay: 7s;
+        @keyframes button-appear {
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+    }
+    #start-btn:hover{
+        background-color: #7cae97;
+        border-color: #7cae97;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    #start-btn{
+        top: 90%;
+        padding: 0.3vw 0.6vw;
+    }
+}
